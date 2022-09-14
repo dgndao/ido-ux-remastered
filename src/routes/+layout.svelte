@@ -1,45 +1,57 @@
 <script>
-	import Header from '$lib/header/Header.svelte';
-	import '../app.css';
+	import './../app.css';
+	import NetworkIndicator from '../lib/header/NetworkIndicator.svelte';
+	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+	
+
 </script>
 
-<Header />
+<header class="px-4 py-2">
+	<a href="/"
+		class="flex flex-row justify-start items-center content-center">
+		<img
+			class="basis-16"
+			src="/logo.svg" 
+			height=64 
+			width=64 
+			alt="Gnosis Auction" 
+		/>
 
-<main>
+		<span 
+			class="basis-auto capsized_6-6 text-gnosis-carrot pl-4">
+			Gnosis Auction
+		</span>
+	</a>
+</header>
+
+<main class="mt-8 px-4">
 	<slot />
 </main>
 
-<footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+<footer class="px-4 capsized_4-4">
+	<nav data-sveltekit-prefetch>
+		<ul>
+			<li class:active={$page.url.pathname === '/'}>
+				<a href="/">Forum</a>
+			</li>
+			<li class:active={$page.url.pathname === '/'}>
+				<a href="/">Terms</a>
+			</li>
+			<li class:active={$page.url.pathname === '/'}>
+				<a href="/">Analytics</a>
+			</li>
+			<li class:active={$page.url.pathname === '/'}>
+				<a href="/">Support</a>
+			</li>
+		</ul>
 </footer>
 
+<nav class="px-4 capsized_4-4 bg-gnosis-beige">
+	<a class="wallet">
+		Connect wallet
+	</a>
+</nav>
+
 <style>
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
-	}
 </style>

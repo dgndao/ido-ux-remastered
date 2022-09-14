@@ -1,57 +1,53 @@
 <script>
-	import Counter from '$lib/Counter.svelte';
+	
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<title>Gnosis Auction - Home</title>
+	<meta name="description" content="Gnosis Auction" />
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
+	<h1 style="margin-bottom: 64px;">
+		<span class="capsized_6-6">
+		The fairiest mechanism<br/>
+		to launch assets on 
+		<a href="" class="chain_label text-ethereum-gray">Ethereum</a> , <br/>
+		<a href="" class="chain_label text-gnosis-green">Gnosis</a> , 
+		<a href="" class="chain_label chain_label__active text-avax-red">Avalanche</a> and 
+		<a href="" class="chain_label text-polygon-purple">Polygon</a>
 		</span>
-
-		to your new<br />SvelteKit app
 	</h1>
 
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+	<p class="capsized_4-4">
+		Gnosis Auction is a platform for conducting
+fair, transparent, and decentralized token price discovery.
+	</p>
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
 	h1 {
-		width: 100%;
+		font-family: 'Averta Bold';
+		font-style: bold;
+		font-size: 1.5rem;
+		line-height: 1.5;
 	}
 
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
+	.chain_label {
+		padding: 4px;
+		text-decoration-line: underline;
+		text-decoration-style: dashed;
+		text-decoration-thickness: 4px;
+		text-underline-offset: 0.25rem;
 	}
 
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	.chain_label__active {
+		text-decoration-line: none !important;
+		text-decoration-style: none !important;
+		background-color: #e8414280;
+		border-style: dashed;
+		border-width: 2px;
+		border-color:#e84142;
+		box-sizing: border-box;
 	}
 </style>
