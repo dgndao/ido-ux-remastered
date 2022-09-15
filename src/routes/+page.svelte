@@ -1,5 +1,5 @@
 <script>
-	
+	import NetworkLabel from "../lib/NetworkLabel.svelte";
 </script>
 
 <svelte:head>
@@ -7,19 +7,20 @@
 	<meta name="description" content="Gnosis Auction" />
 </svelte:head>
 
-<section>
-	<h1 style="margin-bottom: 64px;">
-		<span class="capsized_6-6">
+<section class="mt-2 md:mt-4 px-4">
+	<h1 class="mb-8 md:mb-16">
+		<span class="capsized_6-6 md:capsized_8-8">
 		The fairiest mechanism<br/>
 		to launch assets on 
-		<a href="" class="chain_label text-ethereum-gray">Ethereum</a> , <br/>
-		<a href="" class="chain_label text-gnosis-green">Gnosis</a> , 
-		<a href="" class="chain_label chain_label__active text-avax-red">Avalanche</a> and 
-		<a href="" class="chain_label text-polygon-purple">Polygon</a>
+
+		<NetworkLabel handle={'ethereum'}>Ethereum</NetworkLabel>,
+		<NetworkLabel handle={'gnosis'}>Gnosis</NetworkLabel>,
+		<NetworkLabel handle={'avax'}>Avalanche</NetworkLabel> and 
+		<NetworkLabel handle={'polygon'}>Polygon</NetworkLabel>
 		</span>
 	</h1>
 
-	<p class="capsized_4-4">
+	<p class="capsized_4-4 md:capsized_6-6">
 		Gnosis Auction is a platform for conducting
 fair, transparent, and decentralized token price discovery.
 	</p>
@@ -29,25 +30,5 @@ fair, transparent, and decentralized token price discovery.
 	h1 {
 		font-family: 'Averta Bold';
 		font-style: bold;
-		font-size: 1.5rem;
-		line-height: 1.5;
-	}
-
-	.chain_label {
-		padding: 4px;
-		text-decoration-line: underline;
-		text-decoration-style: dashed;
-		text-decoration-thickness: 4px;
-		text-underline-offset: 0.25rem;
-	}
-
-	.chain_label__active {
-		text-decoration-line: none !important;
-		text-decoration-style: none !important;
-		background-color: #e8414280;
-		border-style: dashed;
-		border-width: 2px;
-		border-color:#e84142;
-		box-sizing: border-box;
 	}
 </style>

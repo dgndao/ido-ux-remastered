@@ -3,8 +3,8 @@ import { end_hydrating } from "svelte/internal";
 const networks = [
     {
         chain_id : 1,
-        name : 'ethereum',
-        label: 'ethereum mainnet',
+        handle : 'ethereum',
+        name: 'ethereum',
         symbol: 'ETH',
         wrapped_symbol: 'WETH',
         contracts: {
@@ -15,8 +15,8 @@ const networks = [
     },
     {
         chain_id : 4,
-        name : 'rinkeby',
-        label: 'rinkeby testnet',
+        handle : 'rinkeby',
+        name: 'rinkeby',
         symbol: 'ETH',
         wrapped_symbol: 'WETH',
         contracts: {
@@ -27,8 +27,8 @@ const networks = [
     },
     {
         chain_id : 100,
-        name : 'gnosis',
-        label: 'gnosis chain',
+        handle : 'gnosis',
+        name: 'gnosis',
         symbol: 'xDAI',
         wrapped_symbol: 'WxDAI',
         contracts: {
@@ -39,8 +39,8 @@ const networks = [
     },
     {
         chain_id : 137,
-        name : 'polygon',
-        label: 'polygon',
+        handle : 'polygon',
+        name: 'polygon',
         symbol: 'MATIC',
         wrapped_symbol: 'WMATIC',
         contracts: {
@@ -51,8 +51,8 @@ const networks = [
     },
     {
         chain_id : 43113,
-        name : 'fuji',
-        label: 'fuji testnet',
+        handle : 'fuji',
+        name: 'fuji',
         symbol: 'AVAX',
         wrapped_symbol: 'WAVAX',
         contracts: {
@@ -63,8 +63,8 @@ const networks = [
     },
     {
         chain_id : 43114,
-        name : 'avax',
-        label: 'avalanche',
+        handle : 'avax',
+        name: 'avalanche',
         symbol: 'AVAX',
         wrapped_symbol: 'WAVAX',
         contracts: {

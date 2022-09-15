@@ -6,12 +6,11 @@
     import Modal from './../modal/Modal.svelte'
     import networks from './../configs/networks'
 
-    onMount(
-        () => {
-            // add a test to return in SSR context
-            defaultEvmStores.setProvider()
-        }
-    )
+    networkContext = getContext('Metamask')
+
+    let connected = networkContext.connected
+    let chainId = networkContext.chainId
+    let signerAddress = networkContext.signerAddress
 
     let showNetworkSelectionModal = false
     let showWalletConnectionModal = false

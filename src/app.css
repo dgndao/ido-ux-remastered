@@ -21,6 +21,41 @@
 /* auctions blue #001429; */
 /* white: #e8e7e6; */
 
+@layer utilities {
+.capsized_3-0 {
+    font-size: 16.8907px;
+    line-height: 12px;
+}
+  
+.capsized_3-0::before {
+    content: "";
+    margin-bottom: 0.0706em;
+    display: table;
+}
+  
+.capsized_3-0::after {
+    content: "";
+    margin-top: -0.0706em;
+    display: table;
+}
+
+.capsized_3-3 {
+    font-size: 16.8907px;
+    line-height: 24px;
+}
+
+.capsized_3-3::before {
+    content: "";
+    margin-bottom: -0.2847em;
+    display: table;
+}
+
+.capsized_3-3::after {
+    content: "";
+    margin-top: -0.4258em;
+    display: table;
+}
+
 .capsized_4-0 {
     font-size: 22.521px;
     line-height: 16px;
@@ -87,4 +122,5 @@
     content: "";
     margin-top: -0.4258em;
     display: table;
+}
 }
