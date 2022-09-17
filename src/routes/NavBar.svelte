@@ -3,7 +3,7 @@
     import { onMount, onDestroy, setContext } from 'svelte';
     import { derived } from 'svelte/store';
 
-    import networks from './configs/networks';
+    import networks from './../lib/configs/networks';
 
     let isAddressModalVisible, isNetworkModalVisible = false
 
@@ -44,7 +44,7 @@
                 classes = 'text-polygon-purple bg-polygon-purple/10 border-polygon-purple';
                 break;
             case 'ethereum':
-                classes = 'text-ethereum-gray bg-ethereum-gray/10 border-ethereum-gray';
+                classes = 'text-gnosis-black bg-gnosis-black/10 border-gnosis-black';
                 break;
             default:
                 classes = 'text-gnosis-black bg-gnosis-black/10 border-gnosis-black';
@@ -75,23 +75,38 @@
     )
 </script>
 
-<div class="flex flex-row justify-between">
-    {#if $connected && $addressLabel}
-        <button 
-            class="{$chainStyleClasses} uppercase font-sans-bold mr-2 capsized_3-0 p-3 rounded-2xl border border-solid"
-            on:click={requestNetworkModal}>
-            {$chainName}
-        </button>
-        <button 
-            class="text-gnosis-black border-gnosis-black font-sans capsized_3-0 p-3 rounded-2xl border border-solid"
-            on:click={requestAddressModal}>
-            {$addressLabel}
-        </button>
-    {:else }
-        <button 
-            class="active:text-white active:bg-gnosis-black border-gnosis-black text-gnosis-black uppercase font-sans-bold capsized_3-0 p-3 rounded-2xl border border-solid"
-            on:click={requestWalletConnection}>
-            Connect wallet
-        </button>
-    {/if}
-</div>
+<nav class="px-2 bg-gnosis-beige max-w-3xl mx-auto rounded-t-2xl flex flex-row items-center justify-between h-full">
+	<button class="active:text-white active:bg-gnosis-black text-gnosis-black border-gnosis-black capitalize font-averta text-trim-cap-4-gap-0 capsize rounded-2xl border border-solid h-12 w-12 pt-1 mr-2 text-center">
+		<span>&#9776;</span>
+	</button>
+
+	<div class="flex flex-row justify-between">
+        {#if $connected && $addressLabel}
+            <button 
+                class="mr-2 h-9 px-2 pt-[3px] {$chainStyleClasses} rounded-2xl border border-solid"
+                on:click={requestNetworkModal}>
+                <span 
+                    class="uppercase font-averta text-trim-cap-3-gap-0 capsize">
+                    {$chainName}
+                </span>
+            </button>
+            <button 
+                class="h-9 px-2 pt-[3px] leading-none text-gnosis-black border-gnosis-black rounded-2xl border border-solid"
+                on:click={requestAddressModal}>
+                <span 
+                    class="font-averta text-trim-cap-3-gap-0 capsize">
+                    {$addressLabel}
+                </span>
+            </button>
+        {:else }
+            <button 
+                class="h-9 px-2 pt-[3px] leading-none active:text-white active:bg-gnosis-black border-gnosis-black text-gnosis-black rounded-2xl border border-solid"
+                on:click={requestWalletConnection}>
+                <span 
+                    class="uppercase font-averta text-trim-cap-3-gap-0 capsize">
+                    Connect wallet
+                </span>
+            </button>
+        {/if}
+    </div>
+</nav>

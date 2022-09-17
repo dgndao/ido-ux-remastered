@@ -4,8 +4,26 @@ module.exports = {
   
   theme: {
     fontFamily: {
-      sans: ['Averta', 'sans-serif'],
-      'sans-bold': ['Averta Bold', 'sans-serif'],
+      averta: ['Averta', 'sans-serif'],
+      'averta-bold': ['Averta Bold', 'sans-serif'],
+    },
+
+    fontMetrics: {
+      averta: {
+        capHeight: 714,
+        ascent: 1607,
+        descent: -441,
+        lineGap: 481,
+        unitsPerEm: 2048,
+      },
+
+      'averta-bold': {
+        capHeight: 714,
+        ascent: 1604,
+        descent: -444,
+        lineGap: 503,
+        unitsPerEm: 2048,
+      },
     },
  
     extend: {
@@ -20,6 +38,19 @@ module.exports = {
         'gnosis-dark-blue': '#001429',
         'polygon-purple': '#7b3fe4',
       },
+
+      fontSize: {
+        'trim-cap-3-gap-0': ['16.879121px' ,'12px'],
+        'trim-cap-4-gap-0': ['22.520962px' ,'16px'],
+        'trim-cap-4-gap-4': ['22.520962px' ,'32px'],
+        'trim-cap-6-gap-0': ['33.781443px' ,'24px'],
+        'trim-cap-6-gap-4': ['33.781443px' ,'32px'],
+        'trim-cap-6-gap-6': ['33.781443px' ,'48px'],
+        'trim-cap-8-gap-0': ['45.041924px' ,'32px'],
+        'trim-cap-8-gap-4': ['45.041924px' ,'48px'],
+        'trim-cap-8-gap-6': ['45.041924px' ,'56px'],
+        'trim-cap-8-gap-8': ['45.041924px' ,'64px'],
+      }
     },
   },
 
@@ -31,5 +62,5 @@ module.exports = {
     }
   },
 
-  plugins: [],
+  plugins: [require('tailwindcss-capsize')],
 }

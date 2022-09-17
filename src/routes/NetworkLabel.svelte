@@ -3,14 +3,14 @@
     import { onMount, onDestroy, setContext } from 'svelte';
     import { derived } from 'svelte/store';
 
-    import networks from './configs/networks'
+    import networks from '../lib/configs/networks'
 
     export let handle;
 
     let networkId = (networks.find((n) => n.handle == handle)?.chain_id)
 
     let networkClass
-    let activeClass = 'before:block before:absolute before:-inset-y-0 before:-inset-x-1 '
+    let activeClass = 'before:block before:absolute before:-inset-y-0 before:-inset-x-2 '
     let selectedClass = ''
     
     switch(handle) {
